@@ -52,3 +52,4 @@ test_str = "abc123456789"
 # print(test_str[2:7:2])
 print(test_str[-1])
 print(test_str[-8:-1:2])
+print('New_change_to_git')
