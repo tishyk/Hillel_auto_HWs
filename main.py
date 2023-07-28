@@ -1,80 +1,91 @@
+# lesson_3_homework
+#Порахувати кількість унікальних символів в строці. Якщо їх більше 10 - вивести в консоль True, інакше - False. Строку отримати за допомогою функції input()
 
-# home_work_lesson_2
-new_word_1 = input("Слово :")
-word_quantity = len(new_word_1)
-
-string_word_format_1 = "Word '{word}' has {length} letters"
-format_result_1 = string_word_format_1.format(word=new_word_1, length=word_quantity)
-
-print(format_result_1)
-
-# home_work_lesson_2_1
-# string_fword = f'Word {"new"} has {len("new")} letters'
-# print(string_fword)
-#
-# string_word_procent = "Word %s has %s letters"
-# procent_result = string_word_procent % ("new" , len("new"))
-# print(procent_result)
-#
-# string_word_format = "Word {word_1} has {quantity} letters"
-# format_result = string_fword.format (word_1 = "new", quantity=len("new"))
-# print(format_result)
+homework_3 = set(input("Введите значения:"))
+if len(homework_3) > 2:
+    print(True)
+elif len(homework_3) <= 2:
+    print(False)
+else:
+    print("Введено невеерное значение")
 
 
+# #Set_unordered
+# sel_example = {'test', 1, 2, True, True}
+# print(sel_example)
+#
+#
+# list_example = ["test@gmail.com", "test@gmail1.com", "test@gmail.com"]
+# set_from_list = list(set(list_example))
+# print(list_example)
+# print(set_from_list)
+# tuple_from_list = tuple(list_example)
+# print(tuple_from_list)
+# print(list('asd'))
 
 
-# lesson 2
-# print("dima" in "my name is Dima")
+# #tuple_ordered_unchangeable
+# tuple_example = (123, 'apple', True, 123)
+# print(tuple_example)
+# print(tuple_example[0])
+
+
+
+# dict_lesson_3_unordered_changeable
+# employers_dict = {"test@gmail.com": "Test 1",
+#                   "test1@gmail.com": "Test 2",
+#                   "test2@gmail.com": "Test3",
+#                   1: "Test4",
+#                   2: 76}
 #
-# test_string_procent = "my name is Dima, my age is %s, %s I'm lived in Odessa"
+# print(employers_dict)
+# print(employers_dict["test@gmail.com"])
+# print(employers_dict[1])
+# employers_dict[2] = 5
+# employers_dict[1] = "New value"
+# print(employers_dict[2])
+# print(employers_dict[1])
+# print(len(employers_dict)) # Чего длинна
+
+
+
+
+
+
+
+# #List_lesson_3_ordered_changeable
+# list_example_int = [1, 2, 5, 8]
+# list_example_str = ['apple', 'banana']
+# list_example_mix = [1, 'apple']
+# # print(list_example_int)
+# # print(list_example_str)
+# # print(list_example_mix)
+# print(list_example_mix[1])
+# list_example_mix[1] = 'strawberry'
+# print(list_example_mix[1])
+
+
+
+# #lesson_3_if_else
+# first_num = int(input('Enter first num:'))
+# second_num = int(input('Enter second num:'))
 #
-#
-#
-# print(test_string.upper())
-# print(test_string.lower())
-# print(test_string.startswith("name", 3))
-# print(test_string.endswith('Dima'))
-#
-# print(test_string_procent + '27')
-# print(test_string_procent + str(27))
-#
-# procent_result = test_string_procent % (27 , 30)
-# print(procent_result)
-# print(test_string_procent.capitalize())
-#
-#
-# test_string_format = "my name is Dima, my age is {}, I'm lived in {}"
-# test_string_format_2 = "my name is Dima, my age is {age}, I'm lived in {city}"
-#
-# format_result = test_string_format.format(27, 'Odessa')
-# format_result = test_string_format_2.format(age=27, city='Odessa').capitalize()
-# print(format_result)
-#
-# my_age = 33
-# test_string_fstring = f"my name is Dima, my age is {my_age}, {'something'}, {True}"
-# print(test_string_fstring)
-#
-#
-# print(test_string_fstring.capitalize())
-# print(test_string_fstring.title())
-# print(test_string_fstring.count('my'))
-# string_length_exampel = len(test_string_fstring)
-# print(f'symbols count: {string_length_exampel}')
-#
-# print(test_string_fstring.find("name"))
-# int_str = "123"
-# str_str = "asd"
-# alnum_str = "asd"
-# print(int_str.isnumeric())
-# print(str_str.isalpha())
-# print(alnum_str.isalnum())
-#
-#
-# test_str = "abc123456789"
-# print(test_str[0])
-# print(test_str[5])
-# print(test_str[1:10])
-# print(test_str[2:7:2])
-# print(test_str[-1])
-# print(test_str[-8:-1:2])
-# print('New_change_to_git')
+# if first_num > second_num:
+#     print(True)
+#     print("first number more than second number")
+# elif first_num < second_num:
+#     print("second number more than first number")
+#     print(False)
+# else:
+#     print("Equal")
+
+
+
+
+# input_example = input("Enter name:")
+# # example_string = 'Dima' # Зачем это?
+# result = f'Word {input_example} has {len(input_example)} letters'
+# result_format = 'Word {word} has {len_word} letters'.format(word=input_example, len_word=len(input_example))
+# print(result_format)
+
+# print(f'Word {(input_word := input("Enter word:"))}  has {len(input_word)} letters')
