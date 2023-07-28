@@ -7,7 +7,7 @@ if len(homework_3) > 10:
 elif len(homework_3) <= 10:
     print(False)
 else:
-    print("Введено невеерное значение")
+    print("Введено неверное значение")
 
 
 # #Set_unordered
