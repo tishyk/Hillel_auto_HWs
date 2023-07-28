@@ -2,9 +2,9 @@
 #Порахувати кількість унікальних символів в строці. Якщо їх більше 10 - вивести в консоль True, інакше - False. Строку отримати за допомогою функції input()
 
 homework_3 = set(input("Введите значения:"))
-if int(len(homework_3)) > 2:
+if int(len(homework_3)) > 10:
     print(True)
-elif int(len(homework_3)) <= 2:
+elif int(len(homework_3)) <= 10:
     print(False)
 else:
     print("Введено неверное значение")
