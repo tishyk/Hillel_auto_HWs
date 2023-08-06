@@ -1,64 +1,76 @@
-# Напишіть функцію, яка приймає два аргументи.
-# Якщо обидва аргумени відносяться до числових типів функція пермножує ці аргументи і повертає результат
-# Якшо обидва аргументи відносяться до типу стрінг функція обʼєднує їх в один і повертає
-# В будь-якому іншому випадку - функція повертає кортеж з двох агрументів
-# Імпортуйте цю функцію, і викличте в іншому файлі
+# Написати функцыю, яка буде рекурсивно вираховувати число фібоначчі.
+#
+# Число фібоначчі - це число, яке дорівнює суммі двох попередніх в послідовності (це і повинно бути в рекурсії). Закінчується на двох одиницях
 
 
-def home_work_5(first, second):
-    if type(first) == int and type(second) == int:
-        return first * second
-    elif type(first) == str and type(second) == str:
-        return first + second
+def new_fibanacci_fan(num:int):
+    if num == 1 or num == 2:
+        return 1
+    elif num == 0:
+        return 0
     else:
-        return (first, second)
+        return new_fibanacci_fan(num-1) + new_fibanacci_fan(num-2)
+
+resalt = new_fibanacci_fan(9)
+print(resalt)
 
 
-if __name__ == '__main__':
-    b = 1
-    print(b)
 
-# # import import_exampel as ie
-# from import_exampel import get_sum
-#
-# b = 80
-# print(b)
-# a = 1
-# print(b + a)
-
-# while True:
-#     user_input = input('Input word:')
-#     if "o" in user_input.lower():
-#         break
+# def fibonacci_num(numer_fib):
+#     if numer_fib == 1 or numer_fib == 2:
+#         return 1
 #     else:
-#         print("wrong word")
+#         return fibonacci_num(numer_fib-1) + fibonacci_num(numer_fib-2)
+#
+# result = fibonacci_num(9)
+# print(result)
+#
+#
+# def fibonacci_even(n):
+#   if n == 0:
+#     return 0
+#   elif n == 1:
+#     return 1
+#   else:
+#     return fibonacci_even(n - 1) + fibonacci_even(n - 2)
+#
+# print(fibonacci_even(7))
 
-# user_input = input('Input word:')
-# while "o" not in user_input and "O" not in user_input:
-#     user_input = input("The:")
+# def  weit_for():
+#     text = input("Enter qwe:")
+#     if text == "qwe":
+#         return text
+#     else:
+#         return weit_for()
 #
-# print(f'Yas {user_input}')
 
 
-# def sum(first_num, second_num, third_num = 100):
-#
-#     return  first_num + second_num +third_num
-#
-# sum_resalt = sum(1, 2)
-# print(sum_resalt)
 
 #
-# def get_sum(*args):
-#     return sum(args)
-# def get_sum_t(num_tupel):
-#     return sum(num_tupel)
+# def  weit_for_1():
+#     while True:
+#      text = input("Enter qwe: ")
+#      if text == "qwe":
+#         return text
 #
-# print(get_sum_t((1,2,3,4,6)))
-#
-# def get_summ_kwargs(**kwargs):
-#     return sum(kwargs.values())
-#
-# resalt_kwargs = get_summ_kwargs(a=5, d=6)
-# print(resalt_kwargs)
+# weit_for_1()
 
-# print(get_sum(1, 2, 3))
+# def add_to_num(namder: int):
+#     print(namder)
+#     if (namder == 500):
+#         return namder
+#     else:
+#         namder += 2
+#         add_to_num(namder)
+# # sys.setrecursionlimit(10500)
+#
+# add_to_num(499)
+
+
+# def sum_to_num(number):
+#     return number + 10
+#
+# updated_nam = lambda number: number + 10
+#
+# print(sum_to_num(0))
+# print(updated_nam(0))
