@@ -1,77 +1,60 @@
-# Create a file with numbers (in a few rows)
+# Write generator, which generates numbers in a given range (from a certain number to a certain number)
+
+
+def new_generator_homework8(num1, num2):
+    while True:
+        if num1 > num2:
+            break
+        else:
+            yield num1
+            num1 += 1
+
+
+for el in new_generator_homework8(5, 10):
+    print(el)
+
+# def get_test_mail(count):
+#     num = 0
+#     while num <= count:
+#         yield num
+#         num += 1
+# for el in get_test_mail(5):
+#     print(el)
+
+# def get_suquare(limit):
+#     num = 1
+#     while num <= limit:
+#         yield num ** 2
+#         num += 1
 #
-# Read this file, and print the sum of all numbers (create a new function for it)
+# for el in get_suquare(5):
+#     print(el)
+
+# import datetime
+# import time
+# def get_test_mail(count):
 #
-# Use try\except block to avoid other symbols except numbers in the file
-
-
-with open("num.txt", "w") as file_num:
-    file_num.write('6\n')
-    file_num.write('7\n')
-    file_num.write('8\n')
-
-
-def home_work_7():
-    try:
-        with open("num.txt", "r") as file_num:
-            result = file_num.readlines()
-            result_array = []
-            total = 0
-        for element in result:
-            result_array.append(element.replace("\n", ""))
-        for element_new in result_array:
-            total += int(element_new)
-        return total
-    except FileNotFoundError:
-        print("The file 'num.txt' does not exist.")
-    except:
-        print("The user added a str to the file")
-
-
-new_hom = home_work_7()
-print(new_hom)
-
-# try:
-#     file = open("new_text.txt")
-#     print(file.readlines())
-# except UnicodeDecodeError:
-#     pass
-# finally:
-#     file.close()
+#     num = 1
+#     while num <= count:
+#         time.sleep(0.1)
+#         yield f"testmail{datetime.datetime.now()}@gmail.com"
+#         num += 1
 #
-# with open("new_text.txt", "w") as file:
-#     file.write("asd\n")
-#     file.write("My name Dima\n")
-# with open("new_text.txt", "a") as file:
-#     file.write("asd")
-#     file.write("new data\n")
-# with open("new_text.txt", "r") as file:
-#     result =file.readlines()
-#
-# result_array = []
-# for r in result:
-#     result_array.append(r.replace("\n", ""))
-#
-# print(result_array)
+# for el in get_test_mail(5):
+#     print(el)
 
-# try:
-#     print(int(input("First"))/int(input("Second")))
-# except ZeroDivisionError:
-#     print("Error")
-# except ValueError:
-#     print("Not int")
-# except:
-#     pass
-# finally:
-#     print("Finally")
-#
-# print("asd")
 
-# while True:
-#     try:
-#         resalt = input("Enter a number: ")
-#         inr_resalt = int(resalt)
-#         print(inr_resalt)
-#         break
-#     except:
-#         continue
+# def parametr_decorator(n):
+#     def new_decrator(func1):
+#         def decorator_wrapper(*args, **kwargs):
+#             print(f"before {n}")
+#             func1(*args, **kwargs)
+#             print(f"after {n}")
+#         return decorator_wrapper
+#     return new_decrator
+#
+# @parametr_decorator(5)
+# def print_hello(word_to_print):
+#     print(word_to_print)
+#
+# print_hello("Hello")
