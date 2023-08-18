@@ -25,33 +25,33 @@ class Square(Figure):
         self.side = side
 
     def get_square(self):
-        return print(f'Square of {self.figure_name} is {self.side ** 2} {self.mesure_of_length}')
+        print(f'Square of {self.figure_name} is {self.side ** 2} {self.mesure_of_length}')
     def get_perimeter(self):
-        return print(f'Perimeter of {self.figure_name} is {self.side * 4} {self.mesure_of_length}')
+         print(f'Perimeter of {self.figure_name} is {self.side * 4} {self.mesure_of_length}')
     def __str__(self):
-        return f"side - {self.side} {self.mesure_of_length}"
+         print(f"side - {self.side} {self.mesure_of_length}")
 class Triangle(Figure):
     def __init__(self, side, mesure_of_length, figure_name):
         super().__init__(mesure_of_length, figure_name)
         self.side = side
 
     def get_square(self):
-        return print(f'Square of {self.figure_name} is {self.side ** 2} {self.mesure_of_length}')
+        print(f'Square of {self.figure_name} is {self.side ** 2} {self.mesure_of_length}')
     def get_perimeter(self):
         print(f'Perimeter of {self.figure_name} is {self.side * 4} {self.mesure_of_length}')
     def __str__(self):
-        return f"side - {self.side} {self.mesure_of_length}"
+        print(f"side - {self.side} {self.mesure_of_length}")
 class Round(Figure):
     def __init__(self, side, mesure_of_length, figure_name):
         super().__init__(mesure_of_length, figure_name)
         self.side = side
 
     def get_square(self):
-        return print(f'Square of {self.figure_name} is {self.side ** 2} {self.mesure_of_length}')
+         print(f'Square of {self.figure_name} is {self.side ** 2} {self.mesure_of_length}')
     def get_perimeter(self):
         print(f'Perimeter of {self.figure_name} is {self.side * 4} {self.mesure_of_length}')
     def __str__(self):
-        return f"side - {self.side} {self.mesure_of_length}"
+         print(f"side - {self.side} {self.mesure_of_length}")
 
 
 square = Square(5, "sm", "square")
