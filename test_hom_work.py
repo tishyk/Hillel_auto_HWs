@@ -17,8 +17,8 @@ class UserSignUpModel:
 
 
 
-user_sign_up = UserSignUpModel("John", "Dou", "test_rubachek10@test.com", "Qwerty12345", "Qwerty12345")
-user_sign_up_error = UserSignUpModel("John", "Dou", "test_rubachek9@test.com", "qwerty12345", "werty12345")
+user_sign_up = UserSignUpModel("John", "Dou", "test_rubachek14@test.com", "Qwerty12345", "Qwerty12345")
+user_sign_up_error = UserSignUpModel("John", "Dou", "test_rubachek15@test.com", "qwerty12345", "werty12345")
 
 sessions = requests.session()
 
@@ -42,13 +42,21 @@ def test_post_new_user_error():
 # Или вариант через параметры
 
 # Написати параметризований тест, на перевірку реєстрації з правильними та неправильними паролями
+# не понимаю как сделать парамертизированый запрос на Get в документации которого ни слова о параметрах. Сделал запрос тет на вход https://qauto2.forstudy.space/api/users/profile
+
+@pytest.mark.parametrize(("email", "password"), [("test_rubachek1@test.com", "Qwerty12345"), ("test_rubachek1@test.com", "werty12345")])
+def test_post_current_profile(email, password):
+    user_sign_up_parametrize = {"email": email, "password": password}
+    post_current_user_profile = requests.post("https://qauto2.forstudy.space/api/auth/signin", json=user_sign_up_parametrize)
+    assert post_current_user_profile.status_code == 200
 
 
-@pytest.mark.parametrize("name,last_name,email,password,repeat_password", [
-    ("John", "Dou", "test_rubachek11@test.com", "Qwerty12345", "Qwerty12345"),
-    ("John", "Dou", "test_rubachek12@test.com", "qwerty12345", "werty12345")
-])
-def test_post_new_user_parametrize(name, last_name, email, password, repeat_password):
-    user_sign_up_parametrize = UserSignUpModel(name, last_name, email, password, repeat_password)
-    post_new_user_parametrize = sessions.post(url="https://qauto2.forstudy.space/api/auth/signup", json=user_sign_up_parametrize.__dict__)
-    assert post_new_user_parametrize.status_code == 201 or post_new_user_parametrize.status_code == 400
+#параметоризированный на создание
+# @pytest.mark.parametrize("name,last_name,email,password,repeat_password", [
+#     ("John", "Dou", "test_rubachek16@test.com", "Qwerty12345", "Qwerty12345"),
+#     ("John", "Dou", "test_rubachek17@test.com", "qwerty12345", "werty12345")
+# ])
+# def test_post_new_user_parametrize(name, last_name, email, password, repeat_password):
+#     user_sign_up_parametrize = UserSignUpModel(name, last_name, email, password, repeat_password)
+#     post_new_user_parametrize = sessions.post(url="https://qauto2.forstudy.space/api/auth/signup", json=user_sign_up_parametrize.__dict__)
+#     assert post_new_user_parametrize.status_code == 201 or post_new_user_parametrize.status_code == 400
