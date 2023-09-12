@@ -37,7 +37,7 @@ class TestRegisteration:
         p_text_after_registration = WebDriverWait(self.driver, 3).until(
             EC.presence_of_element_located((By.XPATH, '//p[text()="You don’t have any cars in your garage"]'))
         )
-        self.session.delete("https://qauto2.forstudy.space/api/users")
+        # self.session.delete("https://qauto2.forstudy.space/api/users")
         assert len(p_text_after_registration.text) == 38
     def test_delete_user(self): # все что ниже из за того что def teardown_method(self) не работает
         self.driver.get("https://qauto2.forstudy.space/panel/settings")

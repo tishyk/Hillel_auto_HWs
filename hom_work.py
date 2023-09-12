@@ -44,10 +44,16 @@ def test_post_new_user_error():
 # Написати параметризований тест, на перевірку реєстрації з правильними та неправильними паролями
 # не понимаю как сделать парамертизированый запрос на Get в документации которого ни слова о параметрах. Сделал запрос тет на вход https://qauto2.forstudy.space/api/users/profile
 
-@pytest.mark.parametrize(("email", "password"), [("test_rubachek1@test.com", "Qwerty12345"), ("test_rubachek1@test.com", "werty12345")])
+# @pytest.mark.parametrize(("email", "password"), [("test_rubachek1@test.com", "Qwerty12345"), ("test_rubachek1@test.com", "werty12345")])
+# def test_post_current_profile(email, password):
+#     user_sign_up_parametrize = {"email": email, "password": password}
+#     post_current_user_profile = requests.post("https://qauto2.forstudy.space/api/auth/signin", json=user_sign_up_parametrize)
+#     assert (post_current_user_profile.status_code == 200
+
+@pytest.mark.parametrize(("email", "password"), [("test_rubachek1@test.com", "Qwerty12345"), ("test_rubachek1@test.com", "werty12345")]))
 def test_post_current_profile(email, password):
     user_sign_up_parametrize = {"email": email, "password": password}
-    post_current_user_profile = requests.post("https://qauto2.forstudy.space/api/auth/signin", json=user_sign_up_parametrize)
+    post_current_user_profile = requests.get("https://qauto2.forstudy.space/api/auth/signin", headers=user_sign_up_parametrize)
     assert post_current_user_profile.status_code == 200
 
 
