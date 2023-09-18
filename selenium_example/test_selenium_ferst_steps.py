@@ -1,14 +1,8 @@
+import allure
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import requests
-import pytest
 
-from selenium_example.facade.registration_facade import RegistrationFacade
-from selenium_example.pages.garege_page import GaragePage
-from selenium_example.pages.main_page import MainPage
-from selenium_example.pages.registration_form_page import RegistrationFormPage
+from registration_facade import RegistrationFacade
 
 
 # chrome_options = webdriver.ChromeOptions()
@@ -50,6 +44,9 @@ class TestRegisteration(TestDase):
         self._session.post(url="https://qauto2.forstudy.space/api/auth/signin", json=self.user_to_login)
         self._session.delete(url="https://qauto2.forstudy.space/api/users")
 
+    @allure.feature("Beautiful tests")
+    @allure.issue(url="https://google.com", name="Link for very important bag")
+    @allure.link(url="https://google.com", name="Link to TestRail")
     def test_registration(self):
         self._registration_facade.registration_user("test", 'testlastname', self.user_email, self.user_password, self.user_password)
         assert self._registration_facade.check_is_user_logged_in()
